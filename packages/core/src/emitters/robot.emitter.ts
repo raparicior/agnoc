@@ -130,7 +130,7 @@ export class Robot extends TypedEmitter<RobotEvents> {
 
   async start(): Promise<void> {
     if (this.device.hasMopAttached && this.device.mode?.value !== DeviceMode.VALUE.MOP) {
-      await this.setMode(new DeviceMode({ value: DeviceMode.VALUE.MOP }));
+      await this.setMode(new DeviceMode({ value: DeviceMode.VALUE.NONE }));
     } else if (!this.device.hasMopAttached && this.device.mode?.value === DeviceMode.VALUE.MOP) {
       await this.setMode(new DeviceMode({ value: DeviceMode.VALUE.NONE }));
     }
